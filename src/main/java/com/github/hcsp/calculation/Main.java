@@ -1,5 +1,8 @@
 package com.github.hcsp.calculation;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
 
     /**
@@ -14,7 +17,43 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        int max;
+        int mid;
+        int min;
+        if (a > b){
+            if (a > c){
+                max = a;
+                if (c > b){
+                    mid = c;
+                    min = b;
+                } else {
+                    mid = b;
+                    min = c;
+                }
+            } else {
+                max = c;
+                mid = a;
+                min = b;
+            }
+        } else {
+            if (b > c){
+                max = b;
+                if ( a > c){
+                    mid = a;
+                    min = c;
+                } else {
+                    mid = c;
+                    min = a;
+                }
+            } else {
+                max = c;
+                mid = b;
+                min = a;
+            }
+        }
+        return max + ">" + mid + ">" + min;
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
