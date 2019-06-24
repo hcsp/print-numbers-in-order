@@ -13,7 +13,22 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+
+        int[] arr = new int[]{a, b, c};
+        //遍历数组进行比较
+        for (int i = 0; i< arr.length;i++){
+            for (int j = 0; j<i; j++){
+                //交换位置
+                if (arr[i]>arr[j]){
+                    arr[i] = arr[i] + arr[j];
+                    arr[j] = arr[i] - arr[j];
+                    arr[i] = arr[i] - arr[j];
+                }
+            }
+        }
+        return arr[0]+">"+arr[1]+">"+arr[2];
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
