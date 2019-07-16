@@ -14,13 +14,11 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        if (a > b && a > c) {
-            return b > c ?  a + ">" + b + ">"+ c : a + ">" + c + ">"+ b;
-        }else if (b > a && b > c){
-            return a > c ? b + ">" + a + ">"+ c : b + ">" + c + ">"+ a;
-        }else if (c > a && c > b && a > b){
-            return c + ">" + a + ">"+ b;
-        }return c + ">" + b + ">"+ a;
+        int max,mid,min;
+        max = Math.max(a,(Math.max(b,c)));
+        min = Math.min(a,(Math.min(b,c)));
+        mid = a^b^c^max^min;
+        return String.format("%d>%d>%d",max,mid,min);
 
 
 
