@@ -14,25 +14,28 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        if(a>b)
-        {
-            a = a+b;
-            b = a-b;
-            a = a-b;
-        }
-        if(b>c)
-        {
-            b = b+c;
-            c = b-c;
-            b = b-c;
-        }
-        if(a>b)
-        {
-            a=a+b;
-            b=a-b;
-            a=a-b;
-        }
-        return c+">"+b+">"+a;
+//        if(a>b)
+//        {
+//            a = a+b;
+//            b = a-b;
+//            a = a-b;
+//        }
+//        if(b>c)
+//        {
+//            b = b+c;
+//            c = b-c;
+//            b = b-c;
+//        }
+//        if(a>b)
+//        {
+//            a=a+b;
+//            b=a-b;
+//            a=a-b;
+//        }
+        int max = Math.max(Math.max(a,b),c);
+        int min = Math.min(Math.min(a,b),c);
+        int mid = a^b^c^max^min;
+        return max+">"+mid+">"+min;
     }
 
     public static void main(String[] args) {
