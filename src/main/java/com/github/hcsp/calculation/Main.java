@@ -1,5 +1,9 @@
 package com.github.hcsp.calculation;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     /**
      * 给定三个大小不确定的数字a,b,c，将其按照从大到小的顺序输出。
@@ -14,18 +18,12 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        int maxNum = Math.max(Math.max(a,b),c);
-        int minNum = Math.min(Math.min(a,b),c);
-        String result = maxNum + ">";
-        if (a<maxNum && a>minNum) {
-            result += a;
-        } else if (b<maxNum && b>minNum) {
-            result += b;
-        } else {
-            result += c;
-        }
-        result += ">" + minNum;
-        return result;
+        List<Integer> arr = new ArrayList<>(3);
+        arr.add(a);
+        arr.add(b);
+        arr.add(c);
+        Collections.sort(arr);
+        return arr.get(2) + ">" + arr.get(1) + ">" + arr.get(0);
     }
 
     public static void main(String[] args) {
