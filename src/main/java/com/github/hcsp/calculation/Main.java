@@ -21,7 +21,7 @@ public class Main {
             return a+">"+c+">"+b;
         }
         if(b>a&&a>c){
-            return c+">"+a+">"+b;
+            return b+">"+a+">"+c;
         }
         if(b>c&&c>a){
             return b+">"+c+">"+a;
