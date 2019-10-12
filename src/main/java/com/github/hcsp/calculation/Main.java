@@ -1,5 +1,6 @@
 package com.github.hcsp.calculation;
 
+import java.util.Arrays;
 import java.util.SplittableRandom;
 
 public class Main {
@@ -16,40 +17,9 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        int min, max, med;//assume values are there for a b c
-
-        if( a > b ){
-            if( a > c ){
-                max = a;
-                if( b > c ){
-                    med = b;
-                    min = c;
-                }else{
-                    med = c;
-                    min = b;
-                }
-            }else{
-                med = a;
-                max = c;
-                min = b;
-            }
-        }else{
-            if( b > c ){
-                max = b;
-                if( a > c ){
-                    med = a;
-                    min = c;
-                }else{
-                    med = c;
-                    min = a;
-                }
-            }else{
-                med = b;
-                max = c;
-                min = a;
-            }
-        }
-        return String.valueOf(max)  + ">" + String.valueOf(med) + ">" + String.valueOf(min);
+        int[] arr = new int[] {a,b,c};
+        Arrays.sort(arr);
+        return arr[2] + ">" + arr[1] + ">" + arr[0];
     }
 
     public static void main(String[] args) {
