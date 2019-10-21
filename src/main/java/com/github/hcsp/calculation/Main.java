@@ -35,9 +35,9 @@ public class Main {
 //            }
 //        }
 //        return s;
-        int[] list = new int[]{a,b,c};
+        int[] list = new int[]{a, b, c};
         Arrays.sort(list);
-        String s=list[2]+">"+list[1]+">"+list[0];
+        String s = list[2] + ">" + list[1] + ">" + list[0];
         return s;
     }
 
