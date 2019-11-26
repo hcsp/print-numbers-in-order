@@ -18,25 +18,26 @@ public class Main {
         String result;
         if(a>b){
             temp = a;
-            result = "a>b";
+            result = a+">"+b;
         }else if(a<b){
             temp = b;
-            result = "b>a";
+            result = b+">"+a;
         }else{
             temp = a;
-            result = "b=a";
+            result = b+"="+a;
         }
         if(temp>c){
-            result = result + ">c";
+            result = result + ">" +c;
         }else if(temp<c){
-            result = "c>" + result ;
+            result = c + ">" + result ;
         }else {
             if(a == b){
-                result = result +"=c";
+                result = result +"="+c;
             }else {
-                result = "c=" + result;
+                result = c+"=" + result;
             }
         }
+
         return result;
     }
 
