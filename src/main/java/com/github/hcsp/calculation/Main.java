@@ -18,9 +18,12 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        int[] intArray = {a, b, c};
-        Arrays.sort(intArray);
-        return intArray[2] + ">" + intArray[1] + ">" + intArray[0];
+        int max = Math.max(a, b);
+        int min = Math.min(a, b);
+
+        if (c > max) return c + ">" + max + ">" + min;
+        if (c < min) return max + ">" + min + ">" + c;
+        return max + ">" + c + ">" + min;
     }
 
     public static void main(String[] args) {
