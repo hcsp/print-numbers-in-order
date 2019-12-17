@@ -1,8 +1,5 @@
 package com.github.hcsp.calculation;
 
-
-import com.sun.deploy.util.StringUtils;
-
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -23,14 +20,12 @@ public class Main {
         Integer[] d = {a, b, c};
         Arrays.sort(d, Collections.reverseOrder());
         StringBuilder str = new StringBuilder();
-        str.append("");
         for (int i = 0; i < d.length; i++) {
             if (i != d.length - 1)
                 str.append(d[i] + ">");
             else
                 str.append(d[i] + "");
         }
-
         return str + "";
     }
 
