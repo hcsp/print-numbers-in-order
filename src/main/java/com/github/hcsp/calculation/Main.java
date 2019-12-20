@@ -1,5 +1,6 @@
 package com.github.hcsp.calculation;
 
+
 public class Main {
     /**
      * 给定三个大小不确定的数字a,b,c，将其按照从大到小的顺序输出。
@@ -13,7 +14,19 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        int max, medium, min;
+        max = Math.max(a, Math.max(b, c));
+        min = Math.min(a, Math.min(b, c));
+        if ((a != max) && (a != min)) {
+            medium = a;
+        } else if ((b != max) && (b != min)) {
+            medium = b;
+        } else {
+            medium = c;
+        }
+        return max + ">" + medium + ">" + min;
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
