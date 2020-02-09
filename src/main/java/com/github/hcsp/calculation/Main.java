@@ -13,7 +13,20 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        int[] resultArray = new int[]{a, b, c};
+        for (int i = resultArray.length; i > 0; i--) {
+            for (int j = 1; j < i; j++) {
+                if (resultArray[j -1] > resultArray[j]) {
+                    resultArray[j - 1] ^= resultArray[j];
+                    resultArray[j] ^= resultArray[j - 1];
+                    resultArray[j - 1] ^= resultArray[j];
+                }
+            }
+        }
+
+        return resultArray[2] + ">" + resultArray[1] + ">" + resultArray[0];
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
