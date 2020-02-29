@@ -14,22 +14,23 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        if(a<b){
-            int tmp = a;
-            a = b;
-            b = tmp;
+        int[] array = {a, b, c};
+        int len = array.length;
+        for (int i = 0; i < len - 1; i++) {
+            boolean isSorted = true;
+            for (int j = 0; j < len - i - 1; j++) {
+                if (array[j] < array[j + 1]) {
+                    int tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                    isSorted = false;
+                }
+            }
+            if (isSorted) {
+                break;
+            }
         }
-        if(a<c){
-            int tmp = a;
-            a = c;
-            c = tmp;
-        }
-        if(b<c){
-            int tmp = c;
-            c = b;
-            b = tmp;
-        }
-        return a+">"+b+">"+c;
+        return array[0] + ">" + array[1] + ">" + array[2];
     }
 
     public static void main(String[] args) {
