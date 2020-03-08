@@ -13,33 +13,7 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {
-        if (a >= b) {
-            if (b >= c) {
-                return numbersInOrder(a, b, c);
-            } else {
-                if (a >= c) {
-                    return numbersInOrder(a, c, b);
-                } else {
-                    return numbersInOrder(c, a, b);
-                }
-            }
-        } else {
-            if (a >= c) {
-                return numbersInOrder(b, a, c);
-            } else {
-                if (b >= c) {
-                    return numbersInOrder(b, c, a);
-                } else {
-                    return numbersInOrder(c, b, a);
-                }
-            }
-        }
-    }
-
-    private static String numbersInOrder(int max, int mid, int min) {
-        return max + ">" + mid + ">" + min;
-    }
+    public static String printNumbersInOrder(int a, int b, int c) {}
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
