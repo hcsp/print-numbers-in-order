@@ -15,7 +15,7 @@ public class Main {
      */
     public static String printNumbersInOrder(int a, int b, int c) {
         int max = Math.max(c, Math.max(a, b));
-        int min = Math.min(c, Math.max(a, b));
+        int min = Math.min(c, Math.min(a, b));
         int d = a + b + c;//将三个数相加
         int x = d - max - min;//除去最大值和最小值
        // System.out.println(max + ">" + x + ">" + min);
