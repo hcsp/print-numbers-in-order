@@ -14,20 +14,24 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        if(a>b && a>c && b>c){
-            return a+">"+b+">"+c;
-        }else if(a>b && a>c && c>b){
-            return a+">"+c+">"+b;
-        }else if(b>a && b>c && a>c){
-             return b+">"+a+">"+c;
-        }else if(b>a && b>c && c>a){
-          return b+">"+c+">"+a;
-        }else if(c>a && c>b && a>b){
-            return c+">"+a+">"+b;
-        }else {
-            return c+">"+b+">"+a;
+        int[] arr = {a, b, c};
+        String str = "";
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                int temp;
+                if (arr[j] < arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
         }
-}
+
+        for (int j = 0; j < arr.length; j++) {
+            str = str + arr[j] + ">";
+        }
+        return str.substring(0, str.length() - 1);
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
