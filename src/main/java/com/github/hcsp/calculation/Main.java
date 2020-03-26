@@ -29,7 +29,6 @@ public class Main {
             b = c;
             c = temp;
         }
-
         return a + ">" + b + ">" + c;
     }
 
