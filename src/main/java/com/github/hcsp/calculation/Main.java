@@ -1,8 +1,5 @@
 package com.github.hcsp.calculation;
 
-import java.util.Comparator;
-import java.util.stream.IntStream;
-
 public class Main {
     /**
      * 给定三个大小不确定的数字a,b,c，将其按照从大到小的顺序输出。
@@ -16,24 +13,7 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {
-        int[] num = new int[] {a, b, c};
-        num = reverse(num);
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            str.append(num[i]).append(">");
-        }
-        str.delete(str.length() - 1, str.length());
-        return str.toString();
-    }
-
-    private static int[] reverse(int[] num) {
-        return IntStream.of(num)
-                .boxed()
-                .sorted(Comparator.reverseOrder())
-                .mapToInt(Integer::intValue)
-                .toArray();
-    }
+    public static String printNumbersInOrder(int a, int b, int c) {}
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
