@@ -1,7 +1,5 @@
 package com.github.hcsp.calculation;
 
-import java.text.MessageFormat;
-
 public class Main {
     /**
      * 给定三个大小不确定的数字a,b,c，将其按照从大到小的顺序输出。
@@ -15,27 +13,7 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {
-//        冒泡排序法
-        int[] sorted = new int[]{a, b, c};
-        int length = sorted.length - 1;
-        while (length > 0) {
-            for (int i = 0; i < length; i++) {
-                if (sorted[i] < sorted[i + 1]) {
-                    switchTwoNumber(sorted, i, i + 1);
-                }
-            }
-            length--;
-        }
-//        System.out.println(String.format("%d,,,,,%d,,,,%d",sorted[0],sorted[1],sorted[2]));
-        return MessageFormat.format("{0}>{1}>{2}", sorted[0], sorted[1], sorted[2]);
-    }
-
-    private static void switchTwoNumber(int[] nums, int x, int y) {
-        int temp = nums[y];
-        nums[y] = nums[x];
-        nums[x] = temp;
-    }
+    public static String printNumbersInOrder(int a, int b, int c) {}
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
