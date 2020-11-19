@@ -1,6 +1,9 @@
 package com.github.hcsp.calculation;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     /**
@@ -16,9 +19,12 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a,int b,int c) {
-        int[] array = new int[]{a, b, c};
-        Arrays.sort(array);
-        return array[2] + ">" + array[1] + ">" + array[0];
+        List<Integer> arr = new ArrayList<>();
+        arr.add(a);
+        arr.add(b);
+        arr.add(c);
+        Collections.sort(arr, (o1, o2) -> o1 > o2 ? -1 : 1);
+        return "" + arr.get(0) + ">" + arr.get(1) + ">" + arr.get(2);
     }
 
     public static void main(String[] args) {
