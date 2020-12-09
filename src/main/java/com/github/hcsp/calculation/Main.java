@@ -13,7 +13,25 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        int cache;
+        if (b > a) {
+            cache = b;
+            b = a;
+            a = cache;
+        }
+        if (c > b) {
+            cache = c;
+            c = b;
+            b = cache;
+        }
+        if (b > a) {
+            cache = b;
+            b = a;
+            a = cache;
+        }
+        return a + ">" + b + ">" + c;
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
