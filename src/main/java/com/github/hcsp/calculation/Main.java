@@ -13,7 +13,43 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String printNumbersInOrder(int a, int b, int c) {
+        int i, j, k;
+        if (a > b) {
+            if (a > c) {
+                i = a;
+                if (b > c) {
+                    j = b;
+                    k = c;
+                } else {
+                    j = c;
+                    k = b;
+                }
+            } else {
+                i = c;
+                j = a;
+                k = b;
+            }
+
+        } else {
+            if (b > c) {
+                i = b;
+                if (a > c) {
+                    j = a;
+                    k = c;
+                } else {
+                    j = c;
+                    k = a;
+                }
+            } else {
+                i = c;
+                j = b;
+                k = a;
+            }
+        }
+    return i + ">" + j + ">" + k;
+    }
+
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
