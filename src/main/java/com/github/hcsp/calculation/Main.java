@@ -20,7 +20,7 @@ public class Main {
         Integer[] intArray = {a, b, c};
         Arrays.sort(intArray, Collections.reverseOrder());
         StringBuilder result = new StringBuilder();
-        for(Integer number:intArray) {
+        for (Integer number : intArray) {
             result.append(number).append(">");
         }
         return result.substring(0, result.length() - 1);
