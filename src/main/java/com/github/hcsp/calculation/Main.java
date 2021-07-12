@@ -13,7 +13,33 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {}
+    public static String getResultString(int a, int b, int c) {
+        return a + ">" + b + ">" + c;
+    }
+    // 我感觉这道题在考察三目运算符但我没有证据
+    // 所以前面那些用数组排序的功能没啥问题，但觉得有点怪
+    public static String printNumbersInOrder(int a, int b, int c) {
+//        abc acb bac bca cab cba
+        if (a >= b && a >= c) {
+            if (b >= c) {
+                return getResultString(a, b, c);
+            } else {
+                return getResultString(a, c, b);
+            }
+        } else if (b >= a && b >= c) {
+            if (a >= c) {
+                return getResultString(b, a, c);
+            } else {
+                return getResultString(b, c, a);
+            }
+        } else {
+            if (a >= b) {
+                return getResultString(c, a, b);
+            } else {
+                return getResultString(c, b, a);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
