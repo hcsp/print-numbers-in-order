@@ -15,24 +15,25 @@ public class Main {
      */
     public static String printNumbersInOrder(int a, int b, int c) {
         String result = "";
-        if(a > b){
-            if(b > c){
-                result = a+">"+b+">"+c;
-            }if(b < c){
-                if(a > c){
-                    result = a+">"+c+">"+b;
-                }else{
-                    result = c+">"+a+">"+b;
+        if (a > b) {
+            if (b > c) {
+                result = a + ">" + b + ">" + c;
+            }
+            if (b < c) {
+                if (a > c) {
+                    result = a + ">" + c + ">" + b;
+                } else {
+                    result = c + ">" + a + ">" + b;
                 }
             }
-        }else{
-            if(a > c){
-                result = b+">"+a+">"+c;
-            }else{
-                if(c > b){
-                    result = c+">"+b+">"+a;
-                }else{
-                    result = b+">"+c+">"+a;
+        } else {
+            if (a > c) {
+                result = b + ">" + a + ">" + c;
+            } else {
+                if (c > b) {
+                    result = c + ">" + b + ">" + a;
+                } else {
+                    result = b + ">" + c + ">" + a;
                 }
             }
         }
