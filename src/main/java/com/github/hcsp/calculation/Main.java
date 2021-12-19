@@ -13,54 +13,8 @@ public class Main {
      * @param c 数字三
      * @return 所要求的字符串
      */
-    public static String printNumbersInOrder(int a, int b, int c) {
-        int largest;
-        int secondLargest;
-        int thirdLargest;
-        if (twoIntegerCompare(a, b)) {
-            if (twoIntegerCompare(b, c)) {
-                largest = a;
-                secondLargest = b;
-                thirdLargest = c;
-            } else {
-                thirdLargest = b;
-                if (twoIntegerCompare(a, c)) {
-                    largest = a;
-                    secondLargest = c;
-                } else {
-                    largest = c;
-                    secondLargest = a;
-                }
-            }
-        } else {
-            if (twoIntegerCompare(a, c)) {
-                largest = b;
-                secondLargest = a;
-                thirdLargest = c;
-            } else {
-                thirdLargest = a;
-                if (twoIntegerCompare(b, c)) {
-                    largest = b;
-                    secondLargest = c;
-                } else {
-                    largest = c;
-                    secondLargest = b;
-                }
-            }
-        }
+    public static String printNumbersInOrder(int a, int b, int c) {}
 
-        return largest + ">" + secondLargest + ">" + thirdLargest;
-    }
-
-    /**
-     * 比较两个int值的大小
-     * @param a int
-     * @param b int
-     * @return boolean
-     */
-    public static Boolean twoIntegerCompare (int a, int b) {
-        return a > b;
-    }
     public static void main(String[] args) {
         System.out.println(printNumbersInOrder(1, 2, 3));
         System.out.println(printNumbersInOrder(-1, 2, -3));
