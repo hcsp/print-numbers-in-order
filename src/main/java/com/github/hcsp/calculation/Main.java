@@ -1,5 +1,7 @@
 package com.github.hcsp.calculation;
 
+import java.util.Arrays;
+
 public class Main {
     /**
      * 给定三个大小不确定的数字a,b,c，将其按照从大到小的顺序输出。
@@ -14,27 +16,9 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        if (a > b) {
-            if (a > c) {
-                if (b > c) {
-                    return a + ">" + b + ">" + c;
-                } else {
-                    return a + ">" + c + ">" + b;
-                }
-            } else {//a<=c
-                return c + ">" + a + ">" + b;
-            }
-        }else {//a<=b
-            if(b>c){
-                if(a>c){
-                    return b+">"+a+">"+c;
-                }else{
-                    return b+">"+c+">"+a;
-                }
-            }else{//b<=c
-                return c+">"+b +">"+a;
-            }
-        }
+        int[] arr = new int[]{a, b, c};
+        Arrays.sort(arr);
+        return arr[2] + ">" + arr[1] + ">" + arr[0];
     }
 
 
