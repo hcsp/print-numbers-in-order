@@ -1,6 +1,7 @@
 package com.github.hcsp.calculation;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main {
     /**
@@ -16,14 +17,29 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        int[] arr = new int[]{a, b, c};
-        Arrays.sort(arr);
-        return arr[2] + ">" + arr[1] + ">" + arr[0];
+        Integer[] arr = new Integer[]{a, b, c};
+        Arrays.sort(arr, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if (o1 < o2) {
+                    return 1;
+                } else if (o1 > o2) {
+                    return -1;
+                }
+                return 0;
+            }
+        });
+
+        StringBuilder str = new StringBuilder();
+        for (Integer ele: arr) {
+            str.append(ele).append(">");
+        }
+
+        return str.substring(0, str.length()-1);
     }
 
-
     public static void main(String[] args) {
-        System.out.println(printNumbersInOrder(1, 2, 3));
+        System.out.println(printNumbersInOrder(129, 220, 123));
         System.out.println(printNumbersInOrder(-1, 2, -3));
     }
 }
