@@ -1,7 +1,9 @@
 package com.github.hcsp.calculation;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class Main {
     /**
@@ -17,8 +19,11 @@ public class Main {
      * @return 所要求的字符串
      */
     public static String printNumbersInOrder(int a, int b, int c) {
-        Integer[] arr = new Integer[]{a, b, c};
-        Arrays.sort(arr, new Comparator<Integer>() {
+        List<Integer> list = new ArrayList<>();
+        list.add(a);
+        list.add(b);
+        list.add(c);
+        Collections.sort(list, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 if (o1 < o2) {
@@ -31,11 +36,11 @@ public class Main {
         });
 
         StringBuilder str = new StringBuilder();
-        for (Integer ele: arr) {
+        for (Integer ele : list) {
             str.append(ele).append(">");
         }
 
-        return str.substring(0, str.length()-1);
+        return str.substring(0, str.length() - 1);
     }
 
     public static void main(String[] args) {
